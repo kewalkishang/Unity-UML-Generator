@@ -60,6 +60,12 @@
     <Compile Include="Assets/TestCustomMenu.cs" />
     <Compile Include="Assets/BasicClass.cs" />
     <Compile Include="Assets/Scripts/SaveToFile.cs" />
+    <Compile Include="Assets/Scripts/ClassComponents/Class.cs" />
+    <Compile Include="Assets/Scripts/ClassComponents/Attribute.cs" />
+    <Compile Include="Assets/Scripts/ClassComponents/Visiblity.cs" />
+    <Compile Include="Assets/Scripts/ClassComponents/Operation.cs" />
+    <Compile Include="Assets/Scripts/ClassComponents/Parameter.cs" />
+    <Compile Include="Assets/Scripts/ClassComponents/TestClassComponents.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
