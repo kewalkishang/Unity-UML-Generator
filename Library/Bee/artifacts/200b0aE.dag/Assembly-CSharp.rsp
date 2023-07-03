@@ -353,6 +353,7 @@
 "Assets/Scripts/ClassComponents/Parameter.cs"
 "Assets/Scripts/ClassComponents/TestClassComponents.cs"
 "Assets/Scripts/ClassComponents/Visiblity.cs"
+"Assets/Scripts/ClassDiagram.cs"
 "Assets/Scripts/SaveToFile.cs"
 "Assets/TestCustomMenu.cs"
 "Assets/TestReflection.cs"

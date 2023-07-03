@@ -14,7 +14,18 @@ public class Operation
         this.name = name;
         this.parameters = parameters;
     }
-    
+
+    public string ToUMLStandard()
+    {
+        string parameterString = "";
+        for (int i = 0; i < parameters.Length; i++)
+        {
+            parameterString += parameters[i].ToUMLStandard() + ", ";
+        }
+
+        return (char)visiblity + " " + name + "( "+ parameterString + ") : " + returnType.Name;
+    }
+
     public override string ToString()
     {
         string parametersString = "";
@@ -22,7 +33,7 @@ public class Operation
         {
             parametersString += parameters[i].ToString() + "\n";
         }
-        return "Operation (" + visiblity.ToString() + " : " + returnType.ToString() + " : " + name + " : " +
+        return "Operation (" + visiblity.ToString() + " : " + returnType.Name + " : " + name + " : " +
                           parametersString + " )";
     }
 }

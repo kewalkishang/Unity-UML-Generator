@@ -1,8 +1,8 @@
 public class Class
 {
-    string name;
-    Attribute[] attributes;
-    Operation[] operations;
+    public string name;
+    public Attribute[] attributes;
+    public Operation[] operations;
 
     public Class(string name, Attribute[] attributes, Operation[] operations)
     {
@@ -10,6 +10,9 @@ public class Class
         this.attributes = attributes;
         this.operations = operations;
     }
+
+
+
 
     public override string ToString()
     {

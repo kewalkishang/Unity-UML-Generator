@@ -66,6 +66,7 @@
     <Compile Include="Assets/Scripts/ClassComponents/Operation.cs" />
     <Compile Include="Assets/Scripts/ClassComponents/Parameter.cs" />
     <Compile Include="Assets/Scripts/ClassComponents/TestClassComponents.cs" />
+    <Compile Include="Assets/Scripts/ClassDiagram.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

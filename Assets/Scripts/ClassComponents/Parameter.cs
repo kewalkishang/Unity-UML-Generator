@@ -11,8 +11,13 @@ public class Parameter
         this.name = name;
     }
 
+    public string ToUMLStandard()
+    {
+        return name + " : " + type.Name;
+    }
+
     public override string ToString()
     {
-        return "Parameter ( " + type.ToString() + " : " + name + " )";
+        return "Parameter ( " + type.Name + " : " + name + " )";
     }
 }

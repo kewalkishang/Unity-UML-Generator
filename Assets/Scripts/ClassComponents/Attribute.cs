@@ -13,9 +13,15 @@ public class Attribute
         this.type = type;
     }
 
+    public string ToUMLStandard()
+    {
+        return (char)visiblity + " " + name + " : " + type.Name;
+
+    }
+
     public override string ToString()
     {
-        return "Attribute ( " + visiblity.ToString()  + " : " + type.ToString() + " : " + name + " )";
+        return "Attribute ( " + visiblity.ToString()  + " : " + type.Name + " : " + name + " )";
             
     }
 }
