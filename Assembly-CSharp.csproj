@@ -56,17 +56,31 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/TestReflection.cs" />
-    <Compile Include="Assets/TestCustomMenu.cs" />
-    <Compile Include="Assets/BasicClass.cs" />
-    <Compile Include="Assets/Scripts/SaveToFile.cs" />
-    <Compile Include="Assets/Scripts/ClassComponents/Class.cs" />
-    <Compile Include="Assets/Scripts/ClassComponents/Attribute.cs" />
-    <Compile Include="Assets/Scripts/ClassComponents/Visiblity.cs" />
-    <Compile Include="Assets/Scripts/ClassComponents/Operation.cs" />
     <Compile Include="Assets/Scripts/ClassComponents/Parameter.cs" />
-    <Compile Include="Assets/Scripts/ClassComponents/TestClassComponents.cs" />
+    <Compile Include="Assets/Scripts/Person.cs" />
     <Compile Include="Assets/Scripts/ClassDiagram.cs" />
+    <Compile Include="Assets/Scripts/TestReflection.cs" />
+    <Compile Include="Assets/Scripts/ClassComponents/Visiblity.cs" />
+    <Compile Include="Assets/Scripts/DraggablePanel.cs" />
+    <Compile Include="Assets/Scripts/AssociationAnalyzer.cs" />
+    <Compile Include="Assets/Scripts/UMLDiagram.cs" />
+    <Compile Include="Assets/Scripts/AssociationLine.cs" />
+    <Compile Include="Assets/Scripts/ClassComponents/Attribute.cs" />
+    <Compile Include="Assets/Scripts/TestCustomMenu.cs" />
+    <Compile Include="Assets/Scripts/ConnectPanels.cs" />
+    <Compile Include="Assets/Scripts/Test.cs" />
+    <Compile Include="Assets/Scripts/Animal.cs" />
+    <Compile Include="Assets/Scripts/ClassComponents/TestClassComponents.cs" />
+    <Compile Include="Assets/Scripts/BasicClass.cs" />
+    <Compile Include="Assets/Scripts/EdgesHandler.cs" />
+    <Compile Include="Assets/Scripts/SaveToFile.cs" />
+    <Compile Include="Assets/Scripts/BankAccount.cs" />
+    <Compile Include="Assets/Scripts/Customer.cs" />
+    <Compile Include="Assets/Scripts/ClassComponents/Class.cs" />
+    <Compile Include="Assets/Scripts/ClassComponents/Operation.cs" />
+    <Compile Include="Assets/Scripts/Vehicle.cs" />
+    <Compile Include="Assets/Scripts/ClassRelationships.cs" />
+    <Compile Include="Assets/Scripts/Kewal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
@@ -725,6 +739,9 @@
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
@@ -742,6 +759,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
@@ -778,12 +798,6 @@
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

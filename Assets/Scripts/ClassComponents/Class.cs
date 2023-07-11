@@ -1,8 +1,14 @@
+using System;
+using System.Collections.Generic;
+
 public class Class
 {
     public string name;
     public Attribute[] attributes;
     public Operation[] operations;
+    public List<Type> inherited = new List<Type>();
+    public List<Type> associated = new List<Type>();
+    public List<Type> implemented = new List<Type>();
 
     public Class(string name, Attribute[] attributes, Operation[] operations)
     {
@@ -10,8 +16,6 @@ public class Class
         this.attributes = attributes;
         this.operations = operations;
     }
-
-
 
 
     public override string ToString()
