@@ -68,6 +68,7 @@
     <Compile Include="Assets/Scripts/ClassComponents/Attribute.cs" />
     <Compile Include="Assets/Scripts/Test/TestCustomMenu.cs" />
     <Compile Include="Assets/Scripts/Test/ConnectPanels.cs" />
+    <Compile Include="Assets/Scripts/Helper/UMLMenu.cs" />
     <Compile Include="Assets/Scripts/Test/Test.cs" />
     <Compile Include="Assets/Scripts/Test/Animal.cs" />
     <Compile Include="Assets/Scripts/Test/TestClassComponents.cs" />
@@ -81,7 +82,6 @@
     <Compile Include="Assets/Scripts/Test/Vehicle.cs" />
     <Compile Include="Assets/Scripts/Test/ClassRelationships.cs" />
     <Compile Include="Assets/Scripts/Test/Kewal.cs" />
-    <Compile Include="Assets/Scripts/Helper/UMLMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
