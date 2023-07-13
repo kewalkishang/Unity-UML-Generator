@@ -57,30 +57,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/ClassComponents/Parameter.cs" />
-    <Compile Include="Assets/Scripts/Person.cs" />
-    <Compile Include="Assets/Scripts/ClassDiagram.cs" />
-    <Compile Include="Assets/Scripts/TestReflection.cs" />
+    <Compile Include="Assets/Scripts/Test/Person.cs" />
+    <Compile Include="Assets/Scripts/UML/ClassDiagram.cs" />
+    <Compile Include="Assets/Scripts/Test/TestReflection.cs" />
     <Compile Include="Assets/Scripts/ClassComponents/Visiblity.cs" />
-    <Compile Include="Assets/Scripts/DraggablePanel.cs" />
-    <Compile Include="Assets/Scripts/AssociationAnalyzer.cs" />
-    <Compile Include="Assets/Scripts/UMLDiagram.cs" />
-    <Compile Include="Assets/Scripts/AssociationLine.cs" />
+    <Compile Include="Assets/Scripts/Helper/DraggablePanel.cs" />
+    <Compile Include="Assets/Scripts/UML/UMLDiagram.cs" />
+    <Compile Include="Assets/Scripts/UML/AssociationLine.cs" />
+    <Compile Include="Assets/Scripts/UML/ParseClass.cs" />
     <Compile Include="Assets/Scripts/ClassComponents/Attribute.cs" />
-    <Compile Include="Assets/Scripts/TestCustomMenu.cs" />
-    <Compile Include="Assets/Scripts/ConnectPanels.cs" />
-    <Compile Include="Assets/Scripts/Test.cs" />
-    <Compile Include="Assets/Scripts/Animal.cs" />
-    <Compile Include="Assets/Scripts/ClassComponents/TestClassComponents.cs" />
-    <Compile Include="Assets/Scripts/BasicClass.cs" />
-    <Compile Include="Assets/Scripts/EdgesHandler.cs" />
-    <Compile Include="Assets/Scripts/SaveToFile.cs" />
-    <Compile Include="Assets/Scripts/BankAccount.cs" />
-    <Compile Include="Assets/Scripts/Customer.cs" />
+    <Compile Include="Assets/Scripts/Test/TestCustomMenu.cs" />
+    <Compile Include="Assets/Scripts/Test/ConnectPanels.cs" />
+    <Compile Include="Assets/Scripts/Test/Test.cs" />
+    <Compile Include="Assets/Scripts/Test/Animal.cs" />
+    <Compile Include="Assets/Scripts/Test/TestClassComponents.cs" />
+    <Compile Include="Assets/Scripts/Test/BasicClass.cs" />
+    <Compile Include="Assets/Scripts/Helper/EdgesHandler.cs" />
+    <Compile Include="Assets/Scripts/Helper/SaveToFile.cs" />
+    <Compile Include="Assets/Scripts/Test/BankAccount.cs" />
+    <Compile Include="Assets/Scripts/Test/Customer.cs" />
     <Compile Include="Assets/Scripts/ClassComponents/Class.cs" />
     <Compile Include="Assets/Scripts/ClassComponents/Operation.cs" />
-    <Compile Include="Assets/Scripts/Vehicle.cs" />
-    <Compile Include="Assets/Scripts/ClassRelationships.cs" />
-    <Compile Include="Assets/Scripts/Kewal.cs" />
+    <Compile Include="Assets/Scripts/Test/Vehicle.cs" />
+    <Compile Include="Assets/Scripts/Test/ClassRelationships.cs" />
+    <Compile Include="Assets/Scripts/Test/Kewal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

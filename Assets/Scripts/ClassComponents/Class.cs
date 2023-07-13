@@ -4,14 +4,16 @@ using System.Collections.Generic;
 public class Class
 {
     public string name;
+    public Type type;
     public Attribute[] attributes;
     public Operation[] operations;
     public List<Type> inherited = new List<Type>();
     public List<Type> associated = new List<Type>();
     public List<Type> implemented = new List<Type>();
 
-    public Class(string name, Attribute[] attributes, Operation[] operations)
+    public Class(Type type, string name, Attribute[] attributes, Operation[] operations)
     {
+        this.type = type;
         this.name = name;
         this.attributes = attributes;
         this.operations = operations;

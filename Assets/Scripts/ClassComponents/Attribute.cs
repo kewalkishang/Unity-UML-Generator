@@ -4,7 +4,7 @@ public class Attribute
 {
     Visiblity visiblity;
     string name;
-    Type type;
+    public Type type;
 
     public Attribute(Visiblity visiblity, string name, Type type)
     {
