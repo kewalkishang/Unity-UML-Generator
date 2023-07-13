@@ -3,7 +3,7 @@ Tool to generate UML diagram for Unity/C# projects.
 Currently only supports class diagrams.
 
 ## Class Diagram -
-![](UMLDiagram7-12-2023_11:24:00_PM.png)
+![ScreenShot](https://github.com/kewalkishang/Unity-UML-Generator/blob/main/UMLDiagram7-12-2023_11:24:00_PM.png)
 
 ## How to use -
 1. Import UMLDiagram.unitypackage.
@@ -15,7 +15,13 @@ Currently only supports class diagrams.
 7. Then screenshot it once you are ready. Window/UMLDiagram/Take ScreenShot.
 8. Your diagram(PNG) will be saved in the root folder of your project.
 
+## Known issue -
+1. Association isn't right
+2. Generate classes for unity classes.
+
 ## Future Features -
 - [ ] Enable users to delete and add classes during runtime.
 - [ ] Add more UML Diagrams like activity, use-case diagram.
 - [ ] Highlight insights from Diagrams.
+- [ ] Make canvas accomodate all classes on automatically.
+- [ ] spread out class diagrams better.
