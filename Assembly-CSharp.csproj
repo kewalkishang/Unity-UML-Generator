@@ -81,6 +81,7 @@
     <Compile Include="Assets/Scripts/Test/Vehicle.cs" />
     <Compile Include="Assets/Scripts/Test/ClassRelationships.cs" />
     <Compile Include="Assets/Scripts/Test/Kewal.cs" />
+    <Compile Include="Assets/Scripts/Helper/UMLMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

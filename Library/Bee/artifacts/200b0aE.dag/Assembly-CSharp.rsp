@@ -354,6 +354,7 @@
 "Assets/Scripts/Helper/DraggablePanel.cs"
 "Assets/Scripts/Helper/EdgesHandler.cs"
 "Assets/Scripts/Helper/SaveToFile.cs"
+"Assets/Scripts/Helper/UMLMenu.cs"
 "Assets/Scripts/Test/Animal.cs"
 "Assets/Scripts/Test/BankAccount.cs"
 "Assets/Scripts/Test/BasicClass.cs"
