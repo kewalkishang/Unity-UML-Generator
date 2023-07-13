@@ -8,7 +8,7 @@ Currently only supports class diagrams.
 ## How to use -
 1. Import UMLDiagram.unitypackage.
 2. Open the UMLDiagram scene.
-3. In the scene, add the Start Class in the UMLDiagram script on the UML GameObject.
+3. In the scene, add the Start Class name in the UMLDiagram script on the UML GameObject.
 4. Hit run. Your class diagram should be generated.
 5. Play around with the canvas(World Space) rect to ensure all your classes are in view.
 6. The panels can be dragged around in the game window.
@@ -16,8 +16,9 @@ Currently only supports class diagrams.
 8. Your diagram(PNG) will be saved in the root folder of your project.
 
 ## Known issue -
-1. Association isn't right
-2. Generate classes for unity classes.
+1. Association isn't right.
+2. Generates class diagram for unity classes(Might not be needed).
+3. Doesnt support creating diagram for the whole project.
 
 ## Future Features -
 - [ ] Enable users to delete and add classes during runtime.
@@ -25,3 +26,5 @@ Currently only supports class diagrams.
 - [ ] Highlight insights from Diagrams.
 - [ ] Make canvas accomodate all classes on automatically.
 - [ ] spread out class diagrams better.
+- [ ] Give user flexibility to include/exclude namespaces for class generation.
+- [ ] Generate Diagram using the root folder, rather than a class.
