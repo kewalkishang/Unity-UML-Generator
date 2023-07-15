@@ -1,5 +1,5 @@
 # Unity-UML-Generator
-Tool to generate UML diagram for Unity/C# projects.
+Tool to generate UML diagram for Unity/C# projects. Uses Reflection API to inspect the classes, fields, methods, and constructors at runtime.
 Currently only supports class diagrams.
 
 ## Class Diagram -
@@ -16,7 +16,7 @@ Currently only supports class diagrams.
 8. Your diagram(PNG) will be saved in the root folder of your project.
 
 ## Known issue -
-1. Association isn't right.
+1. **Association isn't always right.**(Doesn't find association from inside the methods since reflection cant access it.)
 2. Generates class diagram for unity classes(Might not be needed).
 3. Doesnt support creating diagram for the whole project.
 
