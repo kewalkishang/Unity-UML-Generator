@@ -43,10 +43,12 @@ public class ParseClass
                 {
                     if(interfaces[i].IsArray)
                     {
+                        if(!inter.Contains(interfaces[i].GetElementType()))
                         inter.Add(interfaces[i].GetElementType());
                     }
                     else
                     {
+                        if(!inter.Contains(interfaces[i]))
                         inter.Add(interfaces[i]);
                     }
                     
@@ -72,7 +74,7 @@ public class ParseClass
 
     static Attribute[] extractAttributes(Type classType)
     {
-        FieldInfo[] fields = classType.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+        FieldInfo[] fields = classType.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly | BindingFlags.Static);
         Attribute[] attributes = new Attribute[fields.Length];
         for (int i = 0; i < fields.Length; i++)
         {
@@ -90,11 +92,12 @@ public class ParseClass
                     {
                         if (type1.IsArray)
                         {
-
+                            if(!associateClasses.Contains(type1.GetElementType()))
                             associateClasses.Add(type1.GetElementType());
                         }
                         else
                         {
+                            if (!associateClasses.Contains(type1))
                             associateClasses.Add(type1);
                         }         
                     }      
@@ -106,10 +109,12 @@ public class ParseClass
       
                 if (type.IsArray)
                 {
+                    if(!associateClasses.Contains(type.GetElementType()))
                     associateClasses.Add(type.GetElementType());
                 }
                 else
                 {
+                    if (!associateClasses.Contains(type))
                     associateClasses.Add(type);
                 }
             }
@@ -121,7 +126,7 @@ public class ParseClass
 
     static Operation[] extractMethods(Type classType)
     {
-        MethodInfo[] methods = classType.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+        MethodInfo[] methods = classType.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly | BindingFlags.Static);
         Operation[] methodSignatures = new Operation[methods.Length];
         for (int i = 0; i < methods.Length; i++)
         {
@@ -139,11 +144,13 @@ public class ParseClass
                     { 
                         if (type1.IsArray)
                         {
-                            associateClasses.Add(type1.GetElementType());
+                            if (!associateClasses.Contains(type1.GetElementType()))
+                                associateClasses.Add(type1.GetElementType());
                         }
                         else
                         {
-                            associateClasses.Add(type1);
+                            if (!associateClasses.Contains(type1))
+                                associateClasses.Add(type1);
                         }
                     }
                     
@@ -156,11 +163,13 @@ public class ParseClass
 
                 if (returnType.IsArray)
                 {
-                    associateClasses.Add(returnType.GetElementType());
+                    if (!associateClasses.Contains(returnType.GetElementType()))
+                        associateClasses.Add(returnType.GetElementType());
                 }
                 else
                 {
-                    associateClasses.Add(returnType);
+                    if (!associateClasses.Contains(returnType))
+                        associateClasses.Add(returnType);
                 }
             }
 

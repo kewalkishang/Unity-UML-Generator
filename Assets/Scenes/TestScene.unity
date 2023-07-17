@@ -4044,6 +4044,7 @@ MonoBehaviour:
   implementedSprite: {fileID: 21300000, guid: a0134ea67b3344ff6bbfc07fcebe6927, type: 3}
   StartClass: UMLDiagram
   associationPrefab: {fileID: 4552105040827741532, guid: 62000fa468cd044e3859aa9200538838, type: 3}
+  projectUML: 1
 --- !u!4 &1732179477
 Transform:
   m_ObjectHideFlags: 0

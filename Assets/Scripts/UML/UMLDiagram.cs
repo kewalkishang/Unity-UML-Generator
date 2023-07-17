@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Reflection; //API to programmatically investigate assemblies.
+using System.IO;
 
 //Class to create the UML class diagram and their relationships
 public class UMLDiagram : MonoBehaviour
@@ -18,6 +19,7 @@ public class UMLDiagram : MonoBehaviour
     //This is the first class which is recursively traversed to find connected classes.
     public string StartClass = "BasicClass";
     public GameObject associationPrefab;
+    public Boolean projectUML = true;
 
 
     List<GameObject> panels = new List<GameObject>();
@@ -28,52 +30,71 @@ public class UMLDiagram : MonoBehaviour
     //Map the type to the UIPanels
     Dictionary<Type, GameObject> typePanel = new Dictionary<Type, GameObject>();
 
-  
+
+    //Get all .cs files in the project asset folder.
+    public string[] getAllFolderFiles()
+    {
+        string[] files = null;
+        string assetPath = Application.dataPath;
+        if (Directory.Exists(assetPath))
+        {
+            files = Directory.GetFiles(assetPath, @"*.cs", SearchOption.AllDirectories);
+        }
+        return files;
+    }
+
     //List<GameObject, GameObject>  
     // Start is called before the first frame update
     void Start()
     {
-        string className = StartClass;
+        if (projectUML)
+        {
+            getProjectUML();
+        }
+        else
+        {
+            getUMLfromStartClass();
+        }  
+    }
 
-        // Load the assembly containing the class
-        Assembly assembly = typeof(TestReflection).Assembly; // or Assembly.LoadFrom("path/to/YourAssembly.dll")
-
-        // Get the type information of the start class
-        Type classType = assembly.GetType(className);
+    void getUMLfromStartClass()
+    {
+        Type classType = Type.GetType(StartClass);
         classAssociated.Add(classType);
+
         while (classAssociated.Count > 0)
         {
             Type ty = classAssociated[0];
-          
-            if (!typePanel.ContainsKey(ty))
+            // Debug.Log("ty "+ ty.Name);
+            if (ty != null && !typePanel.ContainsKey(ty))
             {
                 //Parse the class details and get the Class object;
                 Class classIns = ParseClass.getClassFromType(ty);
                 if (classIns != null)
                 {
-                    
+
                     classAssociated.Remove(ty);
 
                     //Get all the associated, inherited and implemented classes.
-                    if(!association.ContainsKey(ty))
-                    association.Add(ty, new List<Type>());
+                    if (!association.ContainsKey(ty))
+                        association.Add(ty, new List<Type>());
                     association[ty].AddRange(classIns.associated);
                     classAssociated.AddRange(classIns.associated);
 
-                    if(!inherited.ContainsKey(ty))
-                    inherited.Add(ty, new List<Type>());
+                    if (!inherited.ContainsKey(ty))
+                        inherited.Add(ty, new List<Type>());
                     inherited[ty].AddRange(classIns.inherited);
                     classAssociated.AddRange(classIns.inherited);
 
-                    if(!implemented.ContainsKey(ty))
-                    implemented.Add(ty, new List<Type>());
+                    if (!implemented.ContainsKey(ty))
+                        implemented.Add(ty, new List<Type>());
                     implemented[ty].AddRange(classIns.implemented);
                     classAssociated.AddRange(classIns.implemented);
 
                     //Use the class obj to generate the diagram of the class (UI panel)
                     GameObject panel = classDiagram.CreateClassDiagram(classIns);
-                    if(!typePanel.ContainsKey(ty))
-                    typePanel.Add(classIns.type, panel);
+                    if (!typePanel.ContainsKey(ty))
+                        typePanel.Add(classIns.type, panel);
                     panel.GetComponent<DraggablePanel>().canvas = canvasObj;
                     panels.Add(panel);
                 }
@@ -82,9 +103,70 @@ public class UMLDiagram : MonoBehaviour
             classAssociated.Remove(ty);
         }
 
-         //HACK : invoking this after a small delay as this will give time for us to access the panel rect values properly.
-         Invoke("SpaceOutClassPanels", 0.01f);
-        
+        //HACK : invoking this after a small delay as this will give time for us to access the panel rect values properly.
+        Invoke("SpaceOutClassPanels", 0.01f);
+    }
+
+
+    void getProjectUML()
+    {
+
+        string[] projectCSFiles = getAllFolderFiles();
+
+
+        foreach (string file in projectCSFiles)
+        {
+            string className = Path.GetFileNameWithoutExtension(file);
+
+            Type classType = Type.GetType(className);
+            classAssociated.Add(classType);
+        }
+
+
+
+        Debug.Log("Initial " + classAssociated.Count);
+
+        while (classAssociated.Count > 0)
+        {
+            Type ty = classAssociated[0];
+            // Debug.Log("ty "+ ty.Name);
+            if (ty != null && !typePanel.ContainsKey(ty))
+            {
+                //Parse the class details and get the Class object;
+                Class classIns = ParseClass.getClassFromType(ty);
+                if (classIns != null)
+                {
+
+                    classAssociated.Remove(ty);
+
+                    //Get all the associated, inherited and implemented classes.
+                    if (!association.ContainsKey(ty))
+                        association.Add(ty, new List<Type>());
+                    association[ty].AddRange(classIns.associated);
+                    //classAssociated.AddRange(classIns.associated);
+
+                    if (!inherited.ContainsKey(ty))
+                        inherited.Add(ty, new List<Type>());
+                    inherited[ty].AddRange(classIns.inherited);
+                    //classAssociated.AddRange(classIns.inherited);
+
+                    if (!implemented.ContainsKey(ty))
+                        implemented.Add(ty, new List<Type>());
+                    implemented[ty].AddRange(classIns.implemented);
+                    //classAssociated.AddRange(classIns.implemented);
+
+                    //Use the class obj to generate the diagram of the class (UI panel)
+                    GameObject panel = classDiagram.CreateClassDiagram(classIns);
+                    if (!typePanel.ContainsKey(ty))
+                        typePanel.Add(classIns.type, panel);
+                    panel.GetComponent<DraggablePanel>().canvas = canvasObj;
+                    panels.Add(panel);
+                }
+
+            }
+            classAssociated.Remove(ty);
+        }
+        Invoke("SpaceOutClassPanels", 0.01f);
     }
 
 
