@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System;
+using System.IO;
 
 public class UMLMenu : EditorWindow
 {
@@ -12,8 +13,12 @@ public class UMLMenu : EditorWindow
         string date = System.DateTime.Now.ToString();
         date = date.Replace("/", "-");
         date = date.Replace(" ", "_");
-        string fileName = "UMLDiagram" + date +".png";// + System.DateTime.Now.ToString()+ ".png";
+        foreach (var c in Path.GetInvalidFileNameChars())
+        {
+            date = date.Replace(c.ToString(), "");
+        }
+
+        string fileName = "UMLDiagram" + date + ".png"; // + System.DateTime.Now.ToString()+ ".png";
         ScreenCapture.CaptureScreenshot(fileName, 5);
     }
-
 }
